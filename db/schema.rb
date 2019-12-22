@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_21_034130) do
+ActiveRecord::Schema.define(version: 2019_12_21_034922) do
+
+  create_table "contexts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_contexts_on_user_id"
+  end
+
+  create_table "projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_projects_on_user_id"
+  end
 
   create_table "todos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
@@ -21,6 +37,12 @@ ActiveRecord::Schema.define(version: 2019_12_21_034130) do
     t.string "building"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "project_id"
+    t.bigint "context_id"
+    t.index ["context_id"], name: "index_todos_on_context_id"
+    t.index ["project_id"], name: "index_todos_on_project_id"
+    t.index ["user_id"], name: "index_todos_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -36,4 +58,9 @@ ActiveRecord::Schema.define(version: 2019_12_21_034130) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "contexts", "users"
+  add_foreign_key "projects", "users"
+  add_foreign_key "todos", "contexts"
+  add_foreign_key "todos", "projects"
+  add_foreign_key "todos", "users"
 end

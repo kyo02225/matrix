@@ -1,2 +1,24 @@
-%h1 Todos#index
-%p Find me in app/views/todos/index.html.haml
+.main__container
+  .main__container__body
+  .index-container__side
+    %nav.side__bar
+      %ul.side__bar__header
+        = link_to root_path do
+          %li.side__bar__header--logo
+            logo
+        = link_to root_path do
+          %li.side__bar__header--username
+            username
+      %ul.side__bar__main__ul
+        = link_to root_path do
+          %li.side__bar__main__ul__li
+            matrix
+        = link_to root_path do
+          %li.side__bar__main__ul__li
+            projects
+        = link_to root_path do
+          %li.side__bar__main__ul__li
+            context
+        = link_to root_path do
+          %li.side__bar__main__ul__li
+            deadline
