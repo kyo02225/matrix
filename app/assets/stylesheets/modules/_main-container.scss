@@ -1,0 +1,45 @@
+.main__container {
+  width: calc(100vw - 180px);
+  &__header {
+    height: 66px;
+    border-bottom: 1px solid black;
+  }
+  &__body {
+    &__matrix {
+      height: calc(100% - 66px);
+      &__ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 45vh 45vh;
+        flex-direction: row-reverse;
+        &__li {
+          font-size: 1.0rem;
+          font-weight: 900;
+          border: 1px solid gray ;
+        }
+      }
+      #matrix__upper__left {
+        >p {
+          float: right;
+        }
+      }
+      #matrix__upper__right {
+        position: relative;
+        >p {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
+      }
+      #matrix__lower__left {
+      }
+      #matrix__lower__right {
+        position: relative;
+        >p {
+        position: absolute;
+        bottom: 0;
+        }
+      }
+    }    
+  }
+}      

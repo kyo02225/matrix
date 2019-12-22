@@ -1,0 +1,15 @@
+.sell_btn{
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  top: 3px;
+  right: 16px;
+  background-color: #01C137;
+  position: fixed;
+  text-align: center;
+  >p {
+    font-size: 3.5rem;
+    color: white;
+    line-height: 50px;
+  }
+}
