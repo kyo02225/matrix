@@ -11,10 +11,10 @@
       = link_to root_path, class: "side__bar__link" do
         %li.side__bar__main__ul__li
           %span マトリックス
-      = link_to root_path, class: "side__bar__link" do
+      = link_to projects_index_path, class: "side__bar__link" do
         %li.side__bar__main__ul__li
           %span プロジェクト
-      = link_to root_path, class: "side__bar__link" do
+      = link_to contexts_index_path, class: "side__bar__link" do
         %li.side__bar__main__ul__li
           %span コンテクスト
       = link_to root_path, class: "side__bar__link" do
@@ -23,6 +23,15 @@
       = link_to root_path, class: "side__bar__link" do
         %li.side__bar__main__ul__li
           %span to doを追加する
-      = link_to root_path, class: "side__bar__link" do
+      = link_to destroy_user_session_path, class: "side__bar__link", method: 'delete' do
         %li.side__bar__main__ul__li
           %span ログアウト
+      = link_to new_user_session_path, class: "side__bar__link" do
+        %li.side__bar__main__ul__li
+          %span ログインページ
+      = link_to new_user_registration_path, class: "side__bar__link" do
+        %li.side__bar__main__ul__li
+          %span 新規ユーザー登録画面
+      = link_to edit_user_registration_path, class: "side__bar__link" do
+        %li.side__bar__main__ul__li
+          %span ユーザー編集

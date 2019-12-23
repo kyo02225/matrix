@@ -2,7 +2,8 @@
   width: calc(100vw - 180px);
   &__header {
     height: 66px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $darkgray;
+    opacity: 0.5;
   }
   &__body {
     position: relative;
