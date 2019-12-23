@@ -1,0 +1,25 @@
+.main
+  = render 'shared/side-bar'
+
+  = form_with model: @todo, url: todos_path, method: "post", local: true do |f|
+    .form__group
+      = f.label :title
+      = f.text_field :title
+    .form__group
+      = f.label :content
+      = f.text_field :content
+    .form__group
+      = f.label "緊急度："
+      = f.radio_button :urgency, "high"
+      = f.label "高い"
+      = f.radio_button :urgency, "low"
+      = f.label "低い"
+    .form__group
+      = f.label "重要度："
+      = f.radio_button :importance, "high"
+      = f.label "高い"
+      = f.radio_button :importance, "low"
+      = f.label "低い"
+    .form__group
+      = f.submit "タスクを追加"
+    

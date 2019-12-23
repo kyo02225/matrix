@@ -1,5 +1,5 @@
 class Todo < ApplicationRecord
   belongs_to :user
-  belongs_to :project
-  belongs_to :context
+  belongs_to :project, optional: true
+  belongs_to :context, optional: true
 end
