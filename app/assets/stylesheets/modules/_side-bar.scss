@@ -1,8 +1,8 @@
 .index-container__side {
   .side__bar {
     width: 180px;
-    height: 100vh;
-    background-color: #01C137;
+    height: 100%;
+    background-color: rgb(50,50,50);
     &__link {
       text-decoration: none;
       color: white;
@@ -26,8 +26,9 @@
     .side__bar__main__ul {
       padding: 8px 16px;
       .side__bar__main__ul__li {
-        font-size: 1.1rem;
-        padding-top: 8px;
+        font-size: 1.0rem;
+        padding-top: 10px;
+        opacity: 0.7;
       }
     }
   }
