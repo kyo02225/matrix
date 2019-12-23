@@ -11,14 +11,21 @@
       重要度低
     %section.main__container__body__matrix
       .main__container__body__matrix__square
-        .main__container__body__matrix__square__upper__left
+        %ul.main__container__body__matrix__square__upper__left__ul
+          - @todos_upper_left.each do |todo_upper_left|
+            %li.main__container__body__matrix__square__upper__left__ul__li
+              = todo_upper_left.title
         %ul.main__container__body__matrix__square__upper__right__ul
           - @todos_upper_right.each do |todo_upper_right|
             %li.main__container__body__matrix__square__upper__right__ul__li
               = todo_upper_right.title
-        .main__container__body__matrix__square__lower__left
-        .main__container__body__matrix__square__lower__right
-      
-          
-          
+        %ul.main__container__body__matrix__square__lower__left__ul
+          - @todos_lower_left.each do |todo_lower_left|
+            %li.main__container__body__matrix__square__lower__left__ul__li
+              = todo_lower_left.title
+        %ul.main__container__body__matrix__square__left__right__ul
+          - @todos_lower_right.each do |todo_lower_right|
+            %li.main__container__body__matrix__square__left__right__ul__li
+              = todo_lower_right.title
+        
           
