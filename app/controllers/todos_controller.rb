@@ -1,9 +1,9 @@
 class TodosController < ApplicationController
   def index
-    @todos_upper_left = Todo.where(urgency: "low").where(importance: "high")
-    @todos_upper_right = Todo.where(urgency: "high").where(importance: "high")
-    @todos_lower_left = Todo.where(urgency: "low").where(importance: "low")
-    @todos_lower_right = Todo.where(urgency: "high").where(importance: "low")
+    @todos_upper_left = Todo.where(urgency: "low").where(importance: "high").order(created_at: "desc")
+    @todos_upper_right = Todo.where(urgency: "high").where(importance: "high").order(created_at: "desc")
+    @todos_lower_left = Todo.where(urgency: "low").where(importance: "low").order(created_at: "desc")
+    @todos_lower_right = Todo.where(urgency: "high").where(importance: "low").order(created_at: "desc")
   end
 
   def new

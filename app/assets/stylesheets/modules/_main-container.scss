@@ -49,6 +49,15 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 45vh 45vh;
         flex-direction: row-reverse;
+        >ul {
+          overflow-x: hidden;
+          overflow-y: scroll;
+          >li {
+            padding: 0.1rem 0.7rem;
+            list-style-type: disc;
+            font-size: 1.1rem;
+          }
+        }
         &__upper__left__ul {
           border-right: 1px solid gainsboro;
           border-bottom: 1px solid gainsboro;
