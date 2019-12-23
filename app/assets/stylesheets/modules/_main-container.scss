@@ -44,27 +44,27 @@
     &__matrix {
       height: calc(100vh - 66px);
       padding: 2rem;
-      &__ul {
+      &__square {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 45vh 45vh;
         flex-direction: row-reverse;
-        &__li {
-          font-size: 1.0rem;
-          font-weight: 900;
+        // &__li {
+        //   font-size: 1.0rem;
+        //   font-weight: 900;
+        // }
+        &__upper__left {
+          border-right: 1px solid gainsboro;
+          border-bottom: 1px solid gainsboro;
         }
-      }
-      #matrix__upper__left {
-        border-right: 1px solid gainsboro;
-        border-bottom: 1px solid gainsboro;
-      }
-      #matrix__upper__right {
-        border-bottom: 1px solid gainsboro;
-      }
-      #matrix__lower__left {
-        border-right: 1px solid gainsboro;
-      }
-      #matrix__lower__right {
+        &__upper__right {
+          border-bottom: 1px solid gainsboro;
+        }
+        &__lower__left {
+          border-right: 1px solid gainsboro;
+        }
+        &__lower__right {
+        }
       }
     }    
   }
