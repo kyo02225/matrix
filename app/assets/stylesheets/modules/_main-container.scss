@@ -49,21 +49,17 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 45vh 45vh;
         flex-direction: row-reverse;
-        // &__li {
-        //   font-size: 1.0rem;
-        //   font-weight: 900;
-        // }
-        &__upper__left {
+        &__upper__left__ul {
           border-right: 1px solid gainsboro;
           border-bottom: 1px solid gainsboro;
         }
-        &__upper__right {
+        &__upper__right__ul {
           border-bottom: 1px solid gainsboro;
         }
-        &__lower__left {
+        &__lower__left__ul {
           border-right: 1px solid gainsboro;
         }
-        &__lower__right {
+        &__lower__right__ul {
         }
       }
     }    

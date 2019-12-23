@@ -12,7 +12,10 @@
     %section.main__container__body__matrix
       .main__container__body__matrix__square
         .main__container__body__matrix__square__upper__left
-        .main__container__body__matrix__square__upper__right
+        %ul.main__container__body__matrix__square__upper__right__ul
+          - @todos_upper_right.each do |todo_upper_right|
+            %li.main__container__body__matrix__square__upper__right__ul__li
+              = todo_upper_right.title
         .main__container__body__matrix__square__lower__left
         .main__container__body__matrix__square__lower__right
       

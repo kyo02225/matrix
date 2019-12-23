@@ -1,5 +1,6 @@
 class TodosController < ApplicationController
   def index
+    @todos_upper_right = Todo.where(urgency: "high").where(importance: "high")
   end
 
   def new
