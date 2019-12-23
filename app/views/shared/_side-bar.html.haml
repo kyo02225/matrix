@@ -6,7 +6,7 @@
           top
       = link_to root_path, class: "side__bar__link" do
         %li.side__bar__header--username
-          %span username
+          %span #{current_user.nickname}
     %ul.side__bar__main__ul
       = link_to root_path, class: "side__bar__link" do
         %li.side__bar__main__ul__li
