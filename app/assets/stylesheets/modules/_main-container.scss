@@ -42,12 +42,11 @@
       letter-spacing: 0.4rem;
     }
     &__matrix {
-      height: calc(100vh - 66px);
       padding: 2rem;
       &__square {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 45vh 45vh;
+        grid-template-rows: 40vh 40vh;
         flex-direction: row-reverse;
         >ul {
           overflow-x: hidden;
