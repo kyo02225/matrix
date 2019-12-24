@@ -7,6 +7,7 @@ class TodosController < ApplicationController
   end
 
   def new
+    @todo = Todo.new
   end
   
   def create
@@ -22,7 +23,7 @@ class TodosController < ApplicationController
 
   private
   def todo_params
-    params.permit(
+    params.require(:todo).permit(
       :title,
       :content,
       :urgency,
