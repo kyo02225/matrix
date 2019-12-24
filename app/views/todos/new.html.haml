@@ -1,7 +1,7 @@
 .main
   = render 'shared/side-bar'
 
-  = form_with model: @todo, url: todos_path, method: "post",locate: true do |f|
+  = form_with model: @todo, method: "post",locate: true do |f|
     .form__group
       = f.label :title
       = f.text_field :title
