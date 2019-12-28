@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_22_035928) do
+ActiveRecord::Schema.define(version: 2019_12_28_082247) do
+
+  create_table "context_projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.bigint "context_id"
+    t.bigint "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["context_id"], name: "index_context_projects_on_context_id"
+    t.index ["project_id"], name: "index_context_projects_on_project_id"
+  end
 
   create_table "contexts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
@@ -33,12 +43,13 @@ ActiveRecord::Schema.define(version: 2019_12_22_035928) do
     t.string "status"
     t.text "content"
     t.string "urgency"
+    t.string "importance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.bigint "project_id"
     t.bigint "context_id"
-    t.string "importance"
+    t.datetime "deadline"
     t.index ["context_id"], name: "index_todos_on_context_id"
     t.index ["project_id"], name: "index_todos_on_project_id"
     t.index ["user_id"], name: "index_todos_on_user_id"

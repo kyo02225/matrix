@@ -27,7 +27,8 @@ class TodosController < ApplicationController
       :title,
       :content,
       :urgency,
-      :importance
+      :importance,
+      :deadline
     ).merge(user_id: current_user.id)
   end
 end

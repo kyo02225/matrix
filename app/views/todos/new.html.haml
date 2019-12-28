@@ -3,23 +3,26 @@
 
   = form_with model: @todo, method: "post",locate: true do |f|
     .form__group
-      = f.label :title
-      = f.text_field :title
-    .form__group
-      = f.label :content
-      = f.text_field :content
+      = f.label "タスク名："
+      = f.text_field :title, placeholder: "タスク名　※必須"
     .form__group
       = f.label "緊急度："
       = f.radio_button :urgency, "high"
       = f.label "高い"
-      = f.radio_button :urgency, "low"
+      = f.radio_button :urgency, "low", checked: "checked"
       = f.label "低い"
     .form__group
       = f.label "重要度："
       = f.radio_button :importance, "high"
       = f.label "高い"
-      = f.radio_button :importance, "low"
+      = f.radio_button :importance, "low", checked: "checked"
       = f.label "低い"
+    .form__group
+      = f.label "締め切り："
+      = f.text_field :deadline, type: "datetime-local"
+    .form__group
+      = f.label "備考："
+      = f.text_field :content
     .form__group
       = f.submit "タスクを追加"
     
