@@ -7,13 +7,15 @@ class TodosController < ApplicationController
   end
 
   def new
+    @project = Project.new
     @todo = Todo.new
   end
   
   def create
-     if @todo = Todo.create(todo_params)
+      @project = Project.create(project_params)
+      @todo = @project.todos.new(todo_params)
       @todo.status = "アクティブ"
-      @todo.save
+      if @todo.save
      redirect_to root_path
     else
       flash.now[:alert] = "タスクの作成に失敗しました"
@@ -22,6 +24,12 @@ class TodosController < ApplicationController
   end
 
   private
+  def project_params
+    params.require(:project).permit(
+      :title
+    ).merge(user_id: current_user.id)
+  end
+
   def todo_params
     params.require(:todo).permit(
       :title,
@@ -31,5 +39,6 @@ class TodosController < ApplicationController
       :deadline
     ).merge(user_id: current_user.id)
   end
+
 end
 

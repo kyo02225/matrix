@@ -20,6 +20,10 @@
     .form__group
       = f.label "締め切り："
       = f.text_field :deadline, type: "datetime-local"
+    = fields_for (@project) do |p|
+      .form__group
+        = p.label "プロジェクト："
+        = p.text_field :title
     .form__group
       = f.label "備考："
       = f.text_field :content
