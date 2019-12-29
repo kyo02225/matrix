@@ -15,8 +15,8 @@ class TodosController < ApplicationController
   def create
       @project = Project.create(project_params)
       @context = Context.create(context_params)
-      @todo = @project.todos.new(todo_params)
       @todo = @context.todos.new(todo_params)
+      @todo.project_id = @project.id
       @todo.status = "アクティブ"
       if @todo.save
         redirect_to root_path
@@ -26,6 +26,8 @@ class TodosController < ApplicationController
       end
   end
 
+  
+  
   private
   def project_params
     params.require(:project).permit(
