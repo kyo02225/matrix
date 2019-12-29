@@ -28,12 +28,20 @@
       緊急度低
     %span.main__container__body__bottom
       重要度低
-    %section.main__container__body__matrix
+    %nav.main__container__body__matrix
       .main__container__body__matrix__square
         %ul.main__container__body__matrix__square__upper__left__ul
           - @todos_upper_left.each do |todo_upper_left|
             %li.main__container__body__matrix__square__upper__left__ul__li
-              = todo_upper_left.title
+              %i.main__container__body__matrix__square__upper__left__ul__li__icon
+                = link_to todo_path(todo_upper_left.id), class: "main__container__body__matrix__square__upper__left__ul__li__icon--link" do
+                  .fa.fa-check-circle
+              %section.main__container__body__matrix__square__upper__left__ul__li__section
+                = link_to todo_path(todo_upper_left.id), class: "main__container__body__matrix__square__upper__left__ul__li__section--link" do
+                  %p.main__container__body__matrix__square__upper__left__ul__li__section--title
+                    = todo_upper_left.title
+                  %p.main__container__body__matrix__square__upper__left__ul__li__section--deadline
+                    = " 締め切り　　#{todo_upper_left.deadline}"
         %ul.main__container__body__matrix__square__upper__right__ul
           - @todos_upper_right.each do |todo_upper_right|
             %li.main__container__body__matrix__square__upper__right__ul__li

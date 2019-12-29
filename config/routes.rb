@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
   root "todos#index"
-  resources :todos, only: [:index, :new, :create] do
+  resources :todos do
     collection do
       get :deadline
+    end
+     member do
+      post :done
     end
   end
 
