@@ -1,16 +1,22 @@
 .main__container
   .main__container__header
+    - unless @project.present? || @context.present?
+      .main__container__header__name
+        %label.main__container__header__name__label
+          ただいまのページ
+        %p.main__container__header__name__p
+          トップページ
     - if @project.present?
-      .main__container__header__project-name
-        %label.main__container__header__project-name__label
+      .main__container__header__name
+        %label.main__container__header__name__label
           プロジェクト名
-        %p.main__container__header__project-name__p
+        %p.main__container__header__name__p
           = @project.title
     - if @context.present?
-      .main__container__header__project-name
-        %label.main__container__header__project-name__label
+      .main__container__header__name
+        %label.main__container__header__name__label
           コンテクスト名
-        %p.main__container__header__project-name__p
+        %p.main__container__header__name__p
           = @context.title
           
   %main.main__container__body
