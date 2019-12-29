@@ -19,7 +19,7 @@
       = f.label "低い"
     .form__group
       = f.label "締め切り："
-      = f.text_field :deadline, type: "datetime-local"
+      = f.text_field :deadline, type: "date"
     = fields_for (@project) do |p|
       .form__group
         = p.label "プロジェクト："

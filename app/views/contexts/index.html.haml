@@ -1,2 +1,9 @@
-%h1 Contexts#index
-%p Find me in app/views/contexts/index.html.haml
+.main
+  = render 'shared/side-bar'
+  %section.context__index__container
+    %ul.context__index__container__ul
+      - @contexts.each do |context|
+        %li.project__index__container__ul__li
+          = link_to context_path(context.id) do
+            %p= context.title
+  = render 'shared/new-btn'

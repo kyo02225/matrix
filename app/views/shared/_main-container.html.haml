@@ -6,6 +6,13 @@
           プロジェクト名
         %p.main__container__header__project-name__p
           = @project.title
+    - if @context.present?
+      .main__container__header__project-name
+        %label.main__container__header__project-name__label
+          コンテクスト名
+        %p.main__container__header__project-name__p
+          = @context.title
+          
   %main.main__container__body
     %span.main__container__body__top
       重要度高

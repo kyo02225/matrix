@@ -13,21 +13,26 @@ class TodosController < ApplicationController
   end
   
   def create
-      @project = Project.create(project_params)
-      @context = Context.create(context_params)
-      @todo = @context.todos.new(todo_params)
-      @todo.project_id = @project.id
-      @todo.status = "アクティブ"
-      if @todo.save
-        redirect_to root_path
-      else
-        flash.now[:alert] = "タスクの作成に失敗しました"
-        render :new
-      end
+    @project = Project.create(project_params)
+    @context = Context.create(context_params)
+    @todo = @context.todos.new(todo_params)
+    @todo.project_id = @project.id
+    @todo.status = "アクティブ"
+    if @todo.save
+      redirect_to root_path
+    else
+      flash.now[:alert] = "タスクの作成に失敗しました"
+      r
+    end
   end
 
-  
-  
+  def deadline
+    @todos_upper_left = Todo.where(urgency: "low").where(importance: "high").order(deadline: "desc")
+    @todos_upper_right = Todo.where(urgency: "high").where(importance: "high").order( deadline:"desc")
+    @todos_lower_left = Todo.where(urgency: "low").where(importance: "low").order(deadline: "desc")
+    @todos_lower_right = Todo.where(urgency: "high").where(importance: "low").order(deadline: "desc")
+  end
+
   private
   def project_params
     params.require(:project).permit(
