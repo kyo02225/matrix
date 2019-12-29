@@ -24,6 +24,10 @@
       .form__group
         = p.label "プロジェクト："
         = p.text_field :title
+    = fields_for (@context) do |c|
+      .form__group
+        = c.label "コンテクスト："
+        = c.text_field :title
     .form__group
       = f.label "備考："
       = f.text_field :content

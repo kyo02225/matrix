@@ -10,10 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_28_082247) do
+ActiveRecord::Schema.define(version: 2019_12_29_005132) do
 
   create_table "context_projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "title"
     t.bigint "context_id"
     t.bigint "project_id"
     t.datetime "created_at", null: false
@@ -43,12 +42,12 @@ ActiveRecord::Schema.define(version: 2019_12_28_082247) do
     t.string "status"
     t.text "content"
     t.string "urgency"
-    t.string "importance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.bigint "project_id"
     t.bigint "context_id"
+    t.string "importance"
     t.datetime "deadline"
     t.index ["context_id"], name: "index_todos_on_context_id"
     t.index ["project_id"], name: "index_todos_on_project_id"
@@ -68,6 +67,8 @@ ActiveRecord::Schema.define(version: 2019_12_28_082247) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "context_projects", "contexts"
+  add_foreign_key "context_projects", "projects"
   add_foreign_key "contexts", "users"
   add_foreign_key "projects", "users"
   add_foreign_key "todos", "contexts"
