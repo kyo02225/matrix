@@ -42,6 +42,9 @@
                     = todo_upper_left.title
                   %p.main__container__body__matrix__square__upper__left__ul__li__section--deadline
                     = " 締め切り　　#{todo_upper_left.deadline}"
+              =link_to todo_path(todo_upper_left.id), method: "delete" do
+                %button.main__container__body__matrix__square__upper__left__ul__li__delete--button 削除
+                
         %ul.main__container__body__matrix__square__upper__right__ul
           - @todos_upper_right.each do |todo_upper_right|
             %li.main__container__body__matrix__square__upper__right__ul__li

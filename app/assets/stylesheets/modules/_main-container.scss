@@ -59,10 +59,10 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 43vh 43vh;
         flex-direction: row-reverse;
-        >ul {
+        ul {
           overflow-x: hidden;
           overflow-y: scroll;                    
-          >li {
+          li {
             padding: 0.1rem 0.7rem;
             border-bottom: 1px solid rgba(204, 204, 204, 0.2);
             list-style-type: disc;
@@ -74,32 +74,41 @@
         &__upper__left__ul {
           border-right: 1px solid gainsboro;
           border-bottom: 1px solid gainsboro;
-          &__li__icon--link {
-            color: rgba(189, 8, 28, 0.5);
-            padding: 0.4rem;
-            font-size: 1.5rem;
-          }
-          &__li__icon--link:hover {
-            opacity: 0.5;
-          }
-          &__li__section {
-            padding-left: 0.5rem;
-            width: 100%;
-            >a {
-              text-decoration: none;
-              color: $darkgray;
+          &__li {
+            &__icon--link {
+              color: rgba(189, 8, 28, 0.5);
+              padding: 0.4rem;
+              font-size: 1.5rem;
             }
-            &--title {
-              font-size: 1rem;
-              font-weight: bold;
+            &__icon--link:hover {
+              opacity: 0.5;
             }
-            &--deadline {
-              font-size: 0.7rem;
-              margin-left: 4rem;
+            &__section {
+              padding-left: 0.5rem;
+              width: 100%;
+              >a {
+                text-decoration: none;
+                color: $darkgray;
+              }
+              &--title {
+                font-size: 1rem;
+                font-weight: bold;
+              }
+              &--deadline {
+                font-size: 0.7rem;
+                margin-left: 4rem;
+              }
+              &__section:hover {
+                opacity: 0.7;
+              }
             }
-          }
-          &__li__section:hover {
-            opacity: 0.7;
+            button {
+              font-size: 0.5rem;
+              border-radius: 0.5rem;
+              width: 3rem;
+              height: 1.5rem;
+              margin-right: 0.2rem;
+            }
           }
         }
         &__upper__right__ul {
