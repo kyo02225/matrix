@@ -113,11 +113,121 @@
         }
         &__upper__right__ul {
           border-bottom: 1px solid gainsboro;
+          &__li {
+            &__icon--link {
+              color: rgba(189, 8, 28, 0.5);
+              padding: 0.4rem;
+              font-size: 1.5rem;
+            }
+            &__icon--link:hover {
+              opacity: 0.5;
+            }
+            &__section {
+              padding-left: 0.5rem;
+              width: 100%;
+              >a {
+                text-decoration: none;
+                color: $darkgray;
+              }
+              &--title {
+                font-size: 1rem;
+                font-weight: bold;
+              }
+              &--deadline {
+                font-size: 0.7rem;
+                margin-left: 4rem;
+              }
+              &__section:hover {
+                opacity: 0.7;
+              }
+            }
+            button {
+              font-size: 0.5rem;
+              border-radius: 0.5rem;
+              width: 3rem;
+              height: 1.5rem;
+              margin-right: 0.2rem;
+            }
+          }
         }
+
+
         &__lower__left__ul {
           border-right: 1px solid gainsboro;
+          &__li {
+            &__icon--link {
+              color: rgba(189, 8, 28, 0.5);
+              padding: 0.4rem;
+              font-size: 1.5rem;
+            }
+            &__icon--link:hover {
+              opacity: 0.5;
+            }
+            &__section {
+              padding-left: 0.5rem;
+              width: 100%;
+              >a {
+                text-decoration: none;
+                color: $darkgray;
+              }
+              &--title {
+                font-size: 1rem;
+                font-weight: bold;
+              }
+              &--deadline {
+                font-size: 0.7rem;
+                margin-left: 4rem;
+              }
+              &__section:hover {
+                opacity: 0.7;
+              }
+            }
+            button {
+              font-size: 0.5rem;
+              border-radius: 0.5rem;
+              width: 3rem;
+              height: 1.5rem;
+              margin-right: 0.2rem;
+            }
+          }
         }
         &__lower__right__ul {
+          &__li {
+            &__icon--link {
+              color: rgba(189, 8, 28, 0.5);
+              padding: 0.4rem;
+              font-size: 1.5rem;
+            }
+            &__icon--link:hover {
+              opacity: 0.5;
+            }
+            &__section {
+              padding-left: 0.5rem;
+              width: 100%;
+              >a {
+                text-decoration: none;
+                color: $darkgray;
+              }
+              &--title {
+                font-size: 1rem;
+                font-weight: bold;
+              }
+              &--deadline {
+                font-size: 0.7rem;
+                margin-left: 4rem;
+              }
+              &__section:hover {
+                opacity: 0.7;
+              }
+            }
+            button {
+              font-size: 0.5rem;
+              border-radius: 0.5rem;
+              width: 3rem;
+              height: 1.5rem;
+              margin-right: 0.2rem;
+            }
+          }
         }
       }
     }    

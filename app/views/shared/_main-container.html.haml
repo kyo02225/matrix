@@ -44,18 +44,63 @@
                     = " 締め切り　　#{todo_upper_left.deadline}"
               =link_to todo_path(todo_upper_left.id), method: "delete" do
                 %button.main__container__body__matrix__square__upper__left__ul__li__delete--button 削除
-                
+
         %ul.main__container__body__matrix__square__upper__right__ul
           - @todos_upper_right.each do |todo_upper_right|
             %li.main__container__body__matrix__square__upper__right__ul__li
-              = todo_upper_right.title
+              %i.main__container__body__matrix__square__upper__right__ul__li__icon
+                = link_to done_todo_path(todo_upper_right.id),method: "post", class: "main__container__body__matrix__square__upper__right__ul__li__icon--link" do
+                  .fa.fa-check-circle
+              %section.main__container__body__matrix__square__upper__right__ul__li__section
+                = link_to edit_todo_path(todo_upper_right.id), class: "main__container__body__matrix__square__upper__right__ul__li__section--link" do
+                  %p.main__container__body__matrix__square__upper__right__ul__li__section--title
+                    = todo_upper_right.title
+                  %p.main__container__body__matrix__square__upper__right__ul__li__section--deadline
+                    = " 締め切り　　#{todo_upper_right.deadline}"
+              =link_to todo_path(todo_upper_right.id), method: "delete" do
+                %button.main__container__body__matrix__square__upper__right__ul__li__delete--button 削除
+
         %ul.main__container__body__matrix__square__lower__left__ul
           - @todos_lower_left.each do |todo_lower_left|
             %li.main__container__body__matrix__square__lower__left__ul__li
-              = todo_lower_left.title
-        %ul.main__container__body__matrix__square__left__right__ul
+              %i.main__container__body__matrix__square__lower__left__ul__li__icon
+                = link_to done_todo_path(todo_lower_left.id),method: "post", class: "main__container__body__matrix__square__lower__left__ul__li__icon--link" do
+                  .fa.fa-check-circle
+              %section.main__container__body__matrix__square__lower__left__ul__li__section
+                = link_to edit_todo_path(todo_lower_left.id), class: "main__container__body__matrix__square__lower__left__ul__li__section--link" do
+                  %p.main__container__body__matrix__square__lower__left__ul__li__section--title
+                    = todo_lower_left.title
+                  %p.main__container__body__matrix__square__lower__left__ul__li__section--deadline
+                    = " 締め切り　　#{todo_lower_left.deadline}"
+              =link_to todo_path(todo_lower_left.id), method: "delete" do
+                %button.main__container__body__matrix__square__lower__left__ul__li__delete--button 削除
+                
+        %ul.main__container__body__matrix__square__lower__right__ul
           - @todos_lower_right.each do |todo_lower_right|
-            %li.main__container__body__matrix__square__left__right__ul__li
-              = todo_lower_right.title
+            %li.main__container__body__matrix__square__lower__right__ul__li
+              %i.main__container__body__matrix__square__lower__right__ul__li__icon
+                = link_to done_todo_path(todo_lower_right.id),method: "post", class: "main__container__body__matrix__square__lower__right__ul__li__icon--link" do
+                  .fa.fa-check-circle
+              %section.main__container__body__matrix__square__lower__right__ul__li__section
+                = link_to edit_todo_path(todo_lower_right.id), class: "main__container__body__matrix__square__lower__right__ul__li__section--link" do
+                  %p.main__container__body__matrix__square__lower__right__ul__li__section--title
+                    = todo_lower_right.title
+                  %p.main__container__body__matrix__square__lower__right__ul__li__section--deadline
+                    = " 締め切り　　#{todo_lower_right.deadline}"
+              =link_to todo_path(todo_lower_right.id), method: "delete" do
+                %button.main__container__body__matrix__square__lower__right__ul__li__delete--button 削除
+                
+        -# %ul.main__container__body__matrix__square__upper__right__ul
+        -#   - @todos_upper_right.each do |todo_upper_right|
+        -#     %li.main__container__body__matrix__square__upper__right__ul__li
+        -#       = todo_upper_right.title
+        -# %ul.main__container__body__matrix__square__lower__left__ul
+        -#   - @todos_lower_left.each do |todo_lower_left|
+        -#     %li.main__container__body__matrix__square__lower__left__ul__li
+        -#       = todo_lower_left.title
+        -# %ul.main__container__body__matrix__square__left__right__ul
+        -#   - @todos_lower_right.each do |todo_lower_right|
+        -#     %li.main__container__body__matrix__square__left__right__ul__li
+        -#       = todo_lower_right.title
         
           
