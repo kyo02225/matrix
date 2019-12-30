@@ -34,10 +34,10 @@
           - @todos_upper_left.each do |todo_upper_left|
             %li.main__container__body__matrix__square__upper__left__ul__li
               %i.main__container__body__matrix__square__upper__left__ul__li__icon
-                = link_to todo_path(todo_upper_left.id), class: "main__container__body__matrix__square__upper__left__ul__li__icon--link" do
+                = link_to done_todo_path(todo_upper_left.id),method: "post", class: "main__container__body__matrix__square__upper__left__ul__li__icon--link" do
                   .fa.fa-check-circle
               %section.main__container__body__matrix__square__upper__left__ul__li__section
-                = link_to todo_path(todo_upper_left.id), class: "main__container__body__matrix__square__upper__left__ul__li__section--link" do
+                = link_to edit_todo_path(todo_upper_left.id), class: "main__container__body__matrix__square__upper__left__ul__li__section--link" do
                   %p.main__container__body__matrix__square__upper__left__ul__li__section--title
                     = todo_upper_left.title
                   %p.main__container__body__matrix__square__upper__left__ul__li__section--deadline

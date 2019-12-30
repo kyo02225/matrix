@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
   devise_for :users
   root "todos#index"
-  resources :todos do
-    collection do
-      get :deadline
-    end
-     member do
-      post :done
+
+  resources :projects, only: [:index, :show] do
+    resources :todos , except: [:show] do
+      collection do
+        get :deadline
+      end
+      member do
+        post :done
+      end
     end
   end
-
   resources :contexts, only: [:index, :show]
-  resources :projects, only: [:index, :show]
+  # resources :projects, only: [:index, :show]
   resources :users, only: [:edit, :update] 
 end
