@@ -10,10 +10,13 @@
     %ul.side__bar__main__ul
       = link_to root_path, class: "side__bar__link" do
         %li.side__bar__main__ul__li
-          %span マトリックス
+          %span 作成順に表示
       = link_to deadline_todos_path, class: "side__bar__link" do
         %li.side__bar__main__ul__li
           %span 締め切り順に表示
+      = link_to done_index_todos_path, class: "side__bar__link" do
+        %li.side__bar__main__ul__li
+          %span 完了一覧
       = link_to new_todo_path, class: "side__bar__link" do
         %li.side__bar__main__ul__li
           %span to doを追加

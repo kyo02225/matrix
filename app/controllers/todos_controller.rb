@@ -46,11 +46,20 @@ before_action :set_params, only: [:edit, :update, :destroy, :done]
     redirect_to root_path
   end
 
+  def done_index
+    @todos_upper_left = Todo.where(urgency: "low").where(importance: "high").where(status: "完了")
+    @todos_upper_right = Todo.where(urgency: "high").where(importance: "high").where(status: "完了")
+    @todos_lower_left = Todo.where(urgency: "low").where(importance: "low").where(status: "完了")
+    @todos_lower_right = Todo.where(urgency: "high").where(importance: "low").where(status: "完了")
+    render action: :index
+  end
+
   def deadline
     @todos_upper_left = Todo.where(urgency: "low").where(importance: "high").where(status: "アクティブ").order(deadline: "desc")
     @todos_upper_right = Todo.where(urgency: "high").where(importance: "high").where(status: "アクティブ").order(deadline:"desc")
     @todos_lower_left = Todo.where(urgency: "low").where(importance: "low").where(status: "アクティブ").order(deadline: "desc")
     @todos_lower_right = Todo.where(urgency: "high").where(importance: "low").where(status: "アクティブ").order(deadline: "desc")
+    render action: :index
   end
 
   private

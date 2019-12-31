@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :todos, except: [:show]do
       collection do
         get :deadline
+        get :done_index
       end
       member do
         post :done
