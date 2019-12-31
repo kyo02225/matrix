@@ -10,8 +10,6 @@ Rails.application.routes.draw do
         post :done
       end
     end
-  
-  resources :contexts, only: [:index, :show]
-  resources :projects, only: [:index, :show]
+    
   resources :users, only: [:edit, :update] 
 end

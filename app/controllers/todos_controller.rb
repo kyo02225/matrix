@@ -9,16 +9,11 @@ before_action :set_params, only: [:edit, :update, :destroy, :done]
   end
 
   def new
-    @project = Project.new
-    @context = Context.new
     @todo = Todo.new
   end
   
   def create
-    @project = Project.create(project_params)
-    @context = Context.create(context_params)
-    @todo = @context.todos.new(todo_params)
-    @todo.project_id = @project.id
+    @todo = Todo.new(todo_params)
     @todo.status = "アクティブ"
     if @todo.save
       redirect_to root_path
@@ -61,20 +56,6 @@ before_action :set_params, only: [:edit, :update, :destroy, :done]
   private
   def set_params
     @todo = Todo.find(params[:id])
-    @todo_project = Project.find_by(id: @todo.project_id)
-    @todo_context = Context.find_by(id: @todo.context_id)
-  end
-
-  def project_params
-    params.require(:project).permit(
-      :title
-    ).merge(user_id: current_user.id)
-  end
-  
-  def context_params
-    params.require(:context).permit(
-      :title
-    ).merge(user_id: current_user.id)
   end
 
   def todo_params
@@ -86,6 +67,5 @@ before_action :set_params, only: [:edit, :update, :destroy, :done]
       :deadline
     ).merge(user_id: current_user.id)
   end
-
 end
 
