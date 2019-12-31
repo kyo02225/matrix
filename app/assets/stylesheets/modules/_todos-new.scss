@@ -1,0 +1,27 @@
+.form__main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__container__ul {
+    width: 45rem;
+    // margin: 0 auto;
+    display: block;
+    padding:1rem 0 0 6rem;
+    border: 1px solid $darkgray;
+    &__li {
+      padding: 0.5rem 1rem;
+      font-size: 1.5rem;
+        &--text {
+          width: 30rem;
+          height: 3rem;
+        }
+      &__btn {
+        padding: 0.5rem 1rem 1rem;
+        font-size: 2rem;
+        text-align: right;
+      }
+    }
+  }
+}
