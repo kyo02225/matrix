@@ -16,9 +16,10 @@ before_action :set_params, only: [:edit, :update, :destroy, :done]
     @todo = Todo.new(todo_params)
     @todo.status = "アクティブ"
     if @todo.save
-      redirect_to root_path
+      redirect_to root_path, notice: "タスクを作成しました"
     else
       flash.now[:alert] = "タスクの作成に失敗しました"
+      render  :new
     end
   end
 
@@ -28,9 +29,10 @@ before_action :set_params, only: [:edit, :update, :destroy, :done]
   def update
     @todo.update(todo_params)
     if @todo.save
-      redirect_to root_path
+      redirect_to root_path, notice: "タスクを作成しました"
     else
       flash.now[:alert] = "タスクの作成に失敗しました"
+      render :edit
     end
   end
 

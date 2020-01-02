@@ -2,25 +2,33 @@
   = render "shared/side-bar"
   .form__main
     %ul.form__main__container__ul
-      = form_with model: @todo, method: "post",locate: true do |f|
+      = form_with model: @todo, method: "post",local: true do |f|
         %li.form__main__container__ul__li
           = f.label "タスク名："
           = f.text_field :title, placeholder: "タスク名　※必須", class: "form__main__container__ul__li--text"
+          - if @todo.errors[:title].any?
+            %p.error-message ※タスク名を入力して下さい
         %li.form__main__container__ul__li
           = f.label "緊急度　："
           = f.radio_button :urgency, "high"
           = f.label "高い"
           = f.radio_button :urgency, "low"
           = f.label "低い"
+          - if @todo.errors[:urgency].any?
+            %p.error-message ※緊急度を入力して下さい
         %li.form__main__container__ul__li
           = f.label "重要度　： "
           = f.radio_button :importance, "high"
           = f.label "高い"
           = f.radio_button :importance, "low"
           = f.label "低い"
+          - if @todo.errors[:importance].any?
+            %p.error-message ※重要度を入力して下さい
         %li.form__main__container__ul__li
           = f.label "締め切り："
           = f.text_field :deadline, type: "date", class: "form__main__container__ul__li--text"
+          - if @todo.errors[:deadline].any?
+            %p.error-message ※締め切りを入力して下さい
         %li.form__main__container__ul__li
           = f.label "備考　　："
           = f.text_field :content, class: "form__main__container__ul__li--text"
