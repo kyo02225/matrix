@@ -8,6 +8,7 @@ Rails.application.routes.draw do
         get :done_index
       end
       member do
+        get :search
         post :done
       end
     end
