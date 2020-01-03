@@ -8,15 +8,15 @@
       %li.devise__form__main__ul__li
         = f.label :名前
         %br/
-        = f.text_field :nickname, autofocus: true, autocomplete: "nickname", class: "devise__form__main__ul__li--text"
+        = f.text_field :nickname, value: "テストユーザー", autofocus: true, autocomplete: "nickname", class: "devise__form__main__ul__li--text"
       %li.devise__form__main__ul__li
         = f.label :メールアドレス
         %br/
-        = f.email_field :email, autofocus: true, autocomplete: "email", class: "devise__form__main__ul__li--text"
+        = f.email_field :email, value: "p@p",autofocus: true, autocomplete: "email", class: "devise__form__main__ul__li--text"
       %li.devise__form__main__ul__li
         = f.label :パスワード
         %br/
-        = f.password_field :password, autocomplete: "current-password", class: "devise__form__main__ul__li--text"
+        = f.password_field :password, value: "111111",autocomplete: "current-password", class: "devise__form__main__ul__li--text"
         %br/
         %em
           ※6文字以上
@@ -26,4 +26,5 @@
           -# = f.label :remember_me
       %li.devise__form__main__ul__li__btn
         = f.submit "ログイン", class: "devise__form__main__ul__li__btn--text"
+
    
