@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_28_082247) do
+ActiveRecord::Schema.define(version: 2020_01_03_092610) do
 
   create_table "todos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2019_12_28_082247) do
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
     t.string "importance", null: false
-    t.datetime "deadline", null: false
+    t.date "deadline"
     t.index ["user_id"], name: "index_todos_on_user_id"
   end
 

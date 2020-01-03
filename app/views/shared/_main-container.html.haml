@@ -1,8 +1,9 @@
 .main__container
   .main__container__header
-    = form_tag(search_todo_path(:id), method: 'get') do
-      = text_field_tag :search
-      = submit_tag 'Search  ', :name => nil
+    .main__container__header__form
+      = form_tag(search_todo_path(:id), method: 'get') do
+        = text_field_tag :search
+        = submit_tag '検索する'
 
   %main.main__container__body
     %span.main__container__body__top
