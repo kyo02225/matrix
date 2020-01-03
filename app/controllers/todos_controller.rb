@@ -65,13 +65,14 @@ before_action :set_params, only: [:edit, :update, :destroy, :done]
   end
 
   def search 
-    if @todos = Todo.search(params[:search])
+    @todos = Todo.search(params[:search])
+    if @todos.present?
     @todos_upper_left = @todos.where(urgency: "low").where(importance: "high").where(status: "アクティブ").order(created_at: "desc")
     @todos_upper_right = @todos.where(urgency: "high").where(importance: "high").where(status: "アクティブ").order(created_at: "desc")
     @todos_lower_left = @todos.where(urgency: "low").where(importance: "low").where(status: "アクティブ").order(created_at: "desc")
     @todos_lower_right = @todos.where(urgency: "high").where(importance: "low").where(status: "アクティブ").order(created_at: "desc")
     else
-      @todos_upper_left = Todo.where(urgency: "low").where(importance: "high").where(status: "アクティブ").order(created_at: "desc")
+    @todos_upper_left = Todo.where(urgency: "low").where(importance: "high").where(status: "アクティブ").order(created_at: "desc")
     @todos_upper_right = Todo.where(urgency: "high").where(importance: "high").where(status: "アクティブ").order(created_at: "desc")
     @todos_lower_left = Todo.where(urgency: "low").where(importance: "low").where(status: "アクティブ").order(created_at: "desc")
     @todos_lower_right = Todo.where(urgency: "high").where(importance: "low").where(status: "アクティブ").order(created_at: "desc")
