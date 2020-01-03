@@ -1,24 +1,25 @@
-# README
+# matrix DB設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false|
+|email|string|null: false|
+|password|string|null: false|
 
-Things you may want to cover:
+### Association
+- has_many :todos
 
-* Ruby version
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|title|string|null: false|
+|urgency|string|null: false|
+|importance|string|null: false|
+|status|string|null: false|
+|deadline|string|null: false|
+|user_id|reference|null: false, foreign_key :true|
+|content|string|
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+- belongs_to :user

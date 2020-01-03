@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :todos
-  validates :nickname, presence: true
+  validates :nickname, :email, :password, presence: true
 end

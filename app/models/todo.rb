@@ -1,5 +1,5 @@
 class Todo < ApplicationRecord
   belongs_to :user
 
-  validates :title, :deadline, :urgency, :importance, presence: true
+  validates :title, :status, :deadline, :urgency, :importance, presence: true
 end

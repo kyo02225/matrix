@@ -14,6 +14,7 @@
           = f.label "高い"
           = f.radio_button :urgency, "low"
           = f.label "低い"
+          .error_message
           - if @todo.errors[:urgency].any?
             %p.error-message ※緊急度を入力して下さい
         %li.form__main__container__ul__li

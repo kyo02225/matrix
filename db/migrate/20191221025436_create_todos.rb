@@ -1,12 +1,11 @@
 class CreateTodos < ActiveRecord::Migration[5.2]
   def change
     create_table :todos do |t|
-      t.string  :title
-      t.string  :status
+      t.string  :title, null: false
+      t.string  :status, null: false
       t.text    :content
-      t.string  :priority
-      t.string  :urgency
-      t.string  :building
+      t.string  :urgency, null: false
+ 
       t.timestamps
     end
   end
