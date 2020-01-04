@@ -1,11 +1,11 @@
 class TodosController < ApplicationController
-before_action :set_params, only: [:edit, :update, :destroy, :done]
+before_action :set_params, only: [:edit, :update, :destroy, :done, :done_back]
 
   def index
-    @todos_upper_left = Todo.where(urgency: "low").where(importance: "high").where(status: "アクティブ").order(created_at: "desc")
-    @todos_upper_right = Todo.where(urgency: "high").where(importance: "high").where(status: "アクティブ").order(created_at: "desc")
-    @todos_lower_left = Todo.where(urgency: "low").where(importance: "low").where(status: "アクティブ").order(created_at: "desc")
-    @todos_lower_right = Todo.where(urgency: "high").where(importance: "low").where(status: "アクティブ").order(created_at: "desc")
+    @todos_upper_left = current_user.todos.where(urgency: "low").where(importance: "high").where(status: "アクティブ").order(created_at: "desc")
+    @todos_upper_right = current_user.todos.where(urgency: "high").where(importance: "high").where(status: "アクティブ").order(created_at: "desc")
+    @todos_lower_left = current_user.todos.where(urgency: "low").where(importance: "low").where(status: "アクティブ").order(created_at: "desc")
+    @todos_lower_right = current_user.todos.where(urgency: "high").where(importance: "low").where(status: "アクティブ").order(created_at: "desc")
   end
 
   def new
@@ -48,34 +48,40 @@ before_action :set_params, only: [:edit, :update, :destroy, :done]
     redirect_to root_path
   end
 
+  def done_back
+    @todo.status = "アクティブ"
+    @todo.save
+    redirect_to root_path
+  end
+
   def done_index
-    @todos_upper_left = Todo.where(urgency: "low").where(importance: "high").where(status: "完了")
-    @todos_upper_right = Todo.where(urgency: "high").where(importance: "high").where(status: "完了")
-    @todos_lower_left = Todo.where(urgency: "low").where(importance: "low").where(status: "完了")
-    @todos_lower_right = Todo.where(urgency: "high").where(importance: "low").where(status: "完了")
-    render action: :index
+    @todos_upper_left = current_user.todos.where(urgency: "low").where(importance: "high").where(status: "完了")
+    @todos_upper_right = current_user.todos.where(urgency: "high").where(importance: "high").where(status: "完了")
+    @todos_lower_left = current_user.todos.where(urgency: "low").where(importance: "low").where(status: "完了")
+    @todos_lower_right = current_user.todos.where(urgency: "high").where(importance: "low").where(status: "完了")
+    render :index
   end
 
   def deadline
-    @todos_upper_left = Todo.where(urgency: "low").where(importance: "high").where(status: "アクティブ").order(deadline: "desc")
-    @todos_upper_right = Todo.where(urgency: "high").where(importance: "high").where(status: "アクティブ").order(deadline:"desc")
-    @todos_lower_left = Todo.where(urgency: "low").where(importance: "low").where(status: "アクティブ").order(deadline: "desc")
-    @todos_lower_right = Todo.where(urgency: "high").where(importance: "low").where(status: "アクティブ").order(deadline: "desc")
-    render action: :index
+    @todos_upper_left = current_user.todos.where(urgency: "low").where(importance: "high").where(status: "アクティブ").order(deadline: "desc")
+    @todos_upper_right = current_user.todos.where(urgency: "high").where(importance: "high").where(status: "アクティブ").order(deadline:"desc")
+    @todos_lower_left = current_user.todos.where(urgency: "low").where(importance: "low").where(status: "アクティブ").order(deadline: "desc")
+    @todos_lower_right = current_user.todos.where(urgency: "high").where(importance: "low").where(status: "アクティブ").order(deadline: "desc")
+    render :index
   end
 
   def search 
-    @todos = Todo.search(params[:search])
+    @todos = current_user.todos.search(params[:search])
     if @todos.present?
-    @todos_upper_left = @todos.where(urgency: "low").where(importance: "high").where(status: "アクティブ").order(created_at: "desc")
-    @todos_upper_right = @todos.where(urgency: "high").where(importance: "high").where(status: "アクティブ").order(created_at: "desc")
-    @todos_lower_left = @todos.where(urgency: "low").where(importance: "low").where(status: "アクティブ").order(created_at: "desc")
-    @todos_lower_right = @todos.where(urgency: "high").where(importance: "low").where(status: "アクティブ").order(created_at: "desc")
+      @todos_upper_left = @todos.where(urgency: "low").where(importance: "high").where(status: "アクティブ").order(created_at: "desc")
+      @todos_upper_right = @todos.where(urgency: "high").where(importance: "high").where(status: "アクティブ").order(created_at: "desc")
+      @todos_lower_left = @todos.where(urgency: "low").where(importance: "low").where(status: "アクティブ").order(created_at: "desc")
+      @todos_lower_right = @todos.where(urgency: "high").where(importance: "low").where(status: "アクティブ").order(created_at: "desc")
     else
-    @todos_upper_left = Todo.where(urgency: "low").where(importance: "high").where(status: "アクティブ").order(created_at: "desc")
-    @todos_upper_right = Todo.where(urgency: "high").where(importance: "high").where(status: "アクティブ").order(created_at: "desc")
-    @todos_lower_left = Todo.where(urgency: "low").where(importance: "low").where(status: "アクティブ").order(created_at: "desc")
-    @todos_lower_right = Todo.where(urgency: "high").where(importance: "low").where(status: "アクティブ").order(created_at: "desc")
+      @todos_upper_left = current_user.todos.where(urgency: "low").where(importance: "high").where(status: "アクティブ").order(created_at: "desc")
+      @todos_upper_right = current_user.todos.where(urgency: "high").where(importance: "high").where(status: "アクティブ").order(created_at: "desc")
+      @todos_lower_left = current_user.todos.where(urgency: "low").where(importance: "low").where(status: "アクティブ").order(created_at: "desc")
+      @todos_lower_right = current_user.todos.where(urgency: "high").where(importance: "low").where(status: "アクティブ").order(created_at: "desc")
     end
   end
 

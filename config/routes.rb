@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       member do
         get :search
         post :done
+        post :done_back
       end
     end
     

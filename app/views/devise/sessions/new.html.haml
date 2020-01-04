@@ -6,10 +6,6 @@
         %button.sign__up 新規登録
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       %li.devise__form__main__ul__li
-        = f.label :名前
-        %br/
-        = f.text_field :nickname, value: "テストユーザー", autofocus: true, autocomplete: "nickname", class: "devise__form__main__ul__li--text"
-      %li.devise__form__main__ul__li
         = f.label :メールアドレス
         %br/
         = f.email_field :email, value: "p@p",autofocus: true, autocomplete: "email", class: "devise__form__main__ul__li--text"
