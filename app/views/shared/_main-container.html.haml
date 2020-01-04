@@ -48,7 +48,9 @@
                     = " 締め切り　　#{todo_upper_right.deadline}"
               =link_to todo_path(todo_upper_right.id), method: "delete" do
                 %button.main__container__body__matrix__square__upper__right__ul__li__delete--button 削除
-              
+              - if todo_upper_right.status == "完了"
+                =link_to done_back_todo_path(todo_upper_right.id), method: "post" do
+                  %button.main__container__body__matrix__square__upper__left__ul__li__done-back--buttoright 戻す
         %ul.main__container__body__matrix__square__lower__left__ul
           - @todos_lower_left.each do |todo_lower_left|
             %li.main__container__body__matrix__square__lower__left__ul__li
@@ -63,7 +65,9 @@
                     = " 締め切り　　#{todo_lower_left.deadline}"
               =link_to todo_path(todo_lower_left.id), method: "delete" do
                 %button.main__container__body__matrix__square__lower__left__ul__li__delete--button 削除
-                
+              - if todo_lower_left.status == "完了"
+                =link_to done_back_todo_path(todo_lower_left.id), method: "post" do
+                  %button.main__container__body__matrix__square__upper__left__ul__li__done-back--buttoright 戻す
         %ul.main__container__body__matrix__square__lower__right__ul
           - @todos_lower_right.each do |todo_lower_right|
             %li.main__container__body__matrix__square__lower__right__ul__li
@@ -78,5 +82,8 @@
                     = " 締め切り　　#{todo_lower_right.deadline}"
               =link_to todo_path(todo_lower_right.id), method: "delete" do
                 %button.main__container__body__matrix__square__lower__right__ul__li__delete--button 削除
+              - if todo_lower_right.status == "完了"
+                =link_to done_back_todo_path(todo_lower_right.id), method: "post" do
+                  %button.main__container__body__matrix__square__upper__left__ul__li__done-back--buttoright 戻す
                 
         

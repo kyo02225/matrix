@@ -51,7 +51,7 @@ before_action :set_params, only: [:edit, :update, :destroy, :done, :done_back]
   def done_back
     @todo.status = "アクティブ"
     @todo.save
-    redirect_to root_path
+    redirect_to done_index_todos_path
   end
 
   def done_index
