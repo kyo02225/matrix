@@ -1,24 +1,52 @@
-# README
+1,アプリケーション概要
+　マトリクス図を採用したtodoアプリです。
+シンプルな機能ですがタスク新規作成の際、「優先度・緊急度」を選択する事で
+マトリスク図に反映される仕様です。マーケティングや仕事術でよく使われますが
+アプリでは見た事がなかったので作成しました。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+・マトリクス図について
+https://ne-tabase.com/freelance/814
 
-Things you may want to cover:
+2,アプリケーション機能
+・ユーザー新規登録機能
+・ユーザーログイン機能
+・ユーザーログアウト機能
+・ユーザー編集機能
+・タスク新規作成機能
+・タスク編集機能
+・タスク削除機能
+・タスク完了機能
+・タスク検索機能
 
-* Ruby version
+3,使用言語、技術
+・HTML5/CSS3(haml,sass)
+・ruby, ruby on rails
+・heroku
+・rspec
+・javascriput,jQuery
 
-* System dependencies
+# matrix DB設計
 
-* Configuration
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false|
+|email|string|null: false|
+|password|string|null: false|
 
-* Database creation
+### Association
+- has_many :todos
 
-* Database initialization
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|title|string|null: false|
+|urgency|string|null: false|
+|importance|string|null: false|
+|status|string|null: false|
+|deadline|string|null: false|
+|user_id|reference|null: false, foreign_key :true|
+|content|string|
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+- belongs_to :user

@@ -1,9 +1,0 @@
-.main
-  = render 'shared/side-bar'
-  %section.project__index__container
-    %ul.project__index__container__ul
-      - @projects.each do |project|
-        %li.project__index__container__ul__li
-          = link_to project_path(project.id) do
-            %p= project.title
-  = render 'shared/new-btn'

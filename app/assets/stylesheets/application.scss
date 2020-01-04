@@ -1,9 +1,10 @@
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 @import 'config/reset';
 @import 'config/colors';
-@import 'modules/contexts';
-@import 'modules/projects';
 @import 'modules/todos-index';
-@import 'modules/project-show';
+@import 'modules/todos-new';
+@import 'modules/devise-registration-new';
 @import 'modules/main-container';
 @import 'modules/side-bar';
 @import 'modules/new-btn';

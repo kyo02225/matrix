@@ -1,7 +1,10 @@
 class Todo < ApplicationRecord
   belongs_to :user
-  belongs_to :project, optional: true
-  belongs_to :context, optional: true
 
-  validates :title, :deadline, :urgency, :importance, presence: true
+  validates :title, :status, :deadline, :urgency, :importance, presence: true
+
+  def self.search(search)
+    return Todo.all unless search
+    Todo.where(['title LIKE ?', "%#{search}%"])
+  end
 end

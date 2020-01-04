@@ -1,25 +1,33 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :nickname
-    %br/
-    = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.devise__form__main
+  %ul.devise__form__main__ul
+    %h2.log__in__text 
+      新規登録
+      = link_to new_user_session_path do
+        %button.sign__up ログイン
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      %li.devise__form__main__ul__li
+        = f.label :名前
+        %br/
+        = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
+      %li.devise__form__main__ul__li
+        = f.label :メールアドレス
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email"
+      %li.devise__form__main__ul__li
+        = f.label :パスワード
+        - if @minimum_password_length
+          %br/
+          %em
+            ※6文字以上
+          -# %em
+          -#   (#{@minimum_password_length} characters minimum)
+        %br/
+        = f.password_field :password, autocomplete: "new-password"
+      %li.devise__form__main__ul__li
+        = f.label :パスワード（確認用）
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "new-password"
+      %li.devise__form__main__ul__li__btn 
+        = f.submit "新規登録"
+    -# = render "devise/shared/links"
