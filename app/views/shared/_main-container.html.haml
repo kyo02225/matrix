@@ -28,7 +28,7 @@
                     = todo_upper_left.title
                   %p.main__container__body__matrix__square__upper__left__ul__li__section--deadline
                     = " 締め切り　　#{todo_upper_left.deadline}"
-              =link_to todo_path(todo_upper_left.id), method: "delete" do
+              =link_to todo_path(todo_upper_left.id), method: "delete",data: {confirm: "削除しますか？"} do
                 %button.main__container__body__matrix__square__upper__left__ul__li__delete--button 削除
               - if todo_upper_left.status == "完了"
                 =link_to done_back_todo_path(todo_upper_left.id), method: "post" do
@@ -46,7 +46,7 @@
                     = todo_upper_right.title
                   %p.main__container__body__matrix__square__upper__right__ul__li__section--deadline
                     = " 締め切り　　#{todo_upper_right.deadline}"
-              =link_to todo_path(todo_upper_right.id), method: "delete" do
+              =link_to todo_path(todo_upper_right.id), method: "delete",data: {confirm: "削除しますか？"} do
                 %button.main__container__body__matrix__square__upper__right__ul__li__delete--button 削除
               - if todo_upper_right.status == "完了"
                 =link_to done_back_todo_path(todo_upper_right.id), method: "post" do
@@ -63,7 +63,7 @@
                     = todo_lower_left.title
                   %p.main__container__body__matrix__square__lower__left__ul__li__section--deadline
                     = " 締め切り　　#{todo_lower_left.deadline}"
-              =link_to todo_path(todo_lower_left.id), method: "delete" do
+              =link_to todo_path(todo_lower_left.id), method: "delete",data: {confirm: "削除しますか？"} do
                 %button.main__container__body__matrix__square__lower__left__ul__li__delete--button 削除
               - if todo_lower_left.status == "完了"
                 =link_to done_back_todo_path(todo_lower_left.id), method: "post" do
@@ -80,7 +80,7 @@
                     = todo_lower_right.title
                   %p.main__container__body__matrix__square__lower__right__ul__li__section--deadline
                     = " 締め切り　　#{todo_lower_right.deadline}"
-              =link_to todo_path(todo_lower_right.id), method: "delete" do
+              =link_to todo_path(todo_lower_right.id), method: "delete",data: {confirm: "削除しますか？"} do
                 %button.main__container__body__matrix__square__lower__right__ul__li__delete--button 削除
               - if todo_lower_right.status == "完了"
                 =link_to done_back_todo_path(todo_lower_right.id), method: "post" do

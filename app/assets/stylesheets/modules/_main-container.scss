@@ -58,7 +58,8 @@
         flex-direction: row-reverse;
         ul {
           overflow-x: hidden;
-          overflow-y: scroll;                    
+          overflow-y: scroll;
+          padding: 2rem;
           li {
             padding: 0.1rem 0.7rem;
             border-bottom: 1px solid rgba(204, 204, 204, 0.2);

@@ -47,8 +47,13 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+# production:
+#   <<: *default
+#   database: matrix_production
+#   username: matrix
+#   password: <%= ENV['MATRIX_DATABASE_PASSWORD'] %>
 production:
   <<: *default
-  database: matrix_production
-  username: matrix
-  password: <%= ENV['MATRIX_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5

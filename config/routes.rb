@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
   root "todos#index"
+  devise_for :users
 
     resources :todos, except: [:show]do
       collection do
