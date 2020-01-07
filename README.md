@@ -1,3 +1,5 @@
+初ポートフォリオです。
+
 1,アプリケーション概要
 　マトリクス図を採用したtodoアプリです。
 シンプルな機能ですがタスク新規作成の際、「優先度・緊急度」を選択する事で
@@ -24,6 +26,11 @@ https://ne-tabase.com/freelance/814
 ・heroku
 ・rspec
 ・javascriput,jQuery
+
+4,今後実装したい機能
+・google map api
+・時間管理機能
+・掲示板機能
 
 # matrix DB設計
 
