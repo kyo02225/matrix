@@ -21,16 +21,16 @@ https://ne-tabase.com/freelance/814
 - タスク検索機能
 
 ## 3.使用言語、技術
-・HTML5/CSS3(haml,sass)
-・ruby, ruby on rails
-・heroku
-・rspec
-・javascriput,jQuery
+- HTML5/CSS3(haml,sass)
+- ruby, ruby on rails
+- heroku
+- rspec
+- javascriput,jQuery
 
 ## 4.今後実装したい機能
-・google map api
-・時間管理機能
-・掲示板機能
+- google map api
+- 時間管理機能
+- 掲示板機能
 
 
 
