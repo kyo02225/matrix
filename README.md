@@ -53,7 +53,7 @@
 
 # matrix DB設計
 
-## usersテーブル
+## userテーブル
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false|
@@ -63,7 +63,7 @@
 ### Association
 - has_many :todos
 
-## usersテーブル
+## todoテーブル
 |Column|Type|Options|
 |------|----|-------|
 |title|string|null: false|
