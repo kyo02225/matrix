@@ -43,13 +43,6 @@
 - rspec
 - javascriput,jQuery
 
-## 6.今後実装したい機能
-- google map api
-- 時間管理機能
-- 掲示板機能
-
-
-
 
 # matrix DB設計
 
